@@ -53,7 +53,7 @@ let is_puiss_2(n : int) : bool =
        
     ;;
 
-   let(i, pic) = random_img 10 50;;
+   let(i, pic) = random_img 1000 50000;;
    open_graph "";;
    draw_picture pic;;
    close_graph();;
