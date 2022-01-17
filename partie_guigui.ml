@@ -1,9 +1,33 @@
+#load "graphics.cma";;
+open Graphics;;
 type couleur = Noir | Blanc ;;
 
 type picture = couleur array array ;;
 type arbre = Feuille of couleur
 | Noeud of arbre * arbre * arbre * arbre ;;
 
+let draw_picture img = 
+  let size = (Array.length img) in
+    resize_window size size ;
+    snd (
+        forloop((0, ()),
+                size,
+	        (function (i, ()) 
+	                  -> ( snd (forloop((0, ()),
+                                            size,
+			                    (function (j, () ) 
+			                              -> ( set_color ( match img.(i).(j) with 
+			                                               | Blanc -> white 
+			                                               | Noir -> black ) ;
+				                           plot i j ;
+				                           (j+1, ()) )
+			                    )
+                                 )) ;
+		               (i+1, ()) )
+	        )
+          )
+      )
+;;
 
 let rec forloop (r , n , next : 'a * int * ( ' a -> 'a )) : 'a =
   if n = 0 then r
@@ -29,12 +53,17 @@ let is_puiss_2(n : int) : bool =
        
     ;;
 
-    random_img 10 25;;
-    
-    Random.int 50;;
+   let(i, pic) = random_img 10 50;;
+   open_graph "";;
+   draw_picture pic;;
+   close_graph();;
 
-    let c : picture = Array.make_matrix 10 10 Noir;;
-c.(0).(0) <- Blanc;;
-c;;
-let p = [|[|Noir;Noir|];[|Blanc;Noir|]|];;
+
+
+   let a : arbre = Noeud(Feuille(Noir), Feuille(Blanc), Feuille(Noir), Feuille(Blanc));;
    
+
+
+
+   
+let image_vers_arbre

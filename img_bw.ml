@@ -1,6 +1,7 @@
 (*******************************
        Projet AP3
 
+<<<<<<< Updated upstream
    Prénom : Guillaume
    Nom : Pierre
 
@@ -9,37 +10,46 @@
 
    Prénom : Fredy Alexis
    Nom : Samaca Fandino
+=======
+   Prï¿½nom : 
+   Nom :
+>>>>>>> Stashed changes
 
 ********************************)
 
 
 (*********************************
-  Mise en place de la bibliothèque
+  Mise en place de la bibliothï¿½que
   graphique			     
 ********************************)
 
-(* nécessaire pour les versions >= 4.09 *)
+(* nï¿½cessaire pour les versions >= 4.09 *)
 (**)
+
+;;
+
 #require "graphics" 
 ;;
  (**)
 
 (* 
-   on charge la bibliothèque graphique dans l'interpréteur
+   on charge la bibliothï¿½que graphique dans l'interprï¿½teur
 *)
+;;
 #load "graphics.cma"
 ;;
 
 (*
   On ouvre le module 
 *)
+;;
 open Graphics
 ;;
 
 (*********************************
         Les boucles			     
 ********************************)
-
+;;
 let rec forloop(r, n, next : 'a * int* ('a -> 'a)) : 'a =
   if n = 0 then r
   else forloop (next(r), n-1, next)
@@ -105,7 +115,7 @@ square_root 2.
         Les types pour 
 	les images			     
 *********************************)
-
+;;
 type couleur = Noir | Blanc
 ;;
 
@@ -123,8 +133,9 @@ type arbre = Feuille of couleur
 *********************************)
 
 (*
-  Dessine une image donnée comme un tableau de couleurs
+  Dessine une image donnï¿½e comme un tableau de couleurs
 *)
+;;
 let draw_picture img = 
   let size = (Array.length img) in
     resize_window size size ;
@@ -151,6 +162,8 @@ let draw_picture img =
 (*
   Lecture d'un fichier pbm au format ascii
 *)
+;;
+
 let read_pbm filename =
   let file = open_in filename in
   let magic = input_line file in
@@ -170,7 +183,7 @@ let read_pbm filename =
       in
 	if (size <> other_size) 
 	then
-	  failwith "ce n'est pas une image carrée"
+	  failwith "ce n'est pas une image carrï¿½e"
 	else
 	  let img = Array.make_matrix size size Blanc in
 	    snd (
@@ -197,6 +210,7 @@ let read_pbm filename =
      des fonctions read_pbm
      et draw_pbm
 *********************************)
+;;
 
 let d = read_pbm "portrait.pbm"
 ;;			 
@@ -215,7 +229,7 @@ close_graph()
 
 
 (*********************************
-       Mettez ici vos réponses 
+       Mettez ici vos rï¿½ponses 
        aux questions et 
        vos fonctions
 *********************************)
