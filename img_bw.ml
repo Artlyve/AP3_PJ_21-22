@@ -1,8 +1,14 @@
 (*******************************
        Projet AP3
 
-   Prénom : 
-   Nom :
+   Prénom : Guillaume
+   Nom : Pierre
+
+   Prénom : Valdrin
+   Nom : Salihi
+
+   Prénom : Fredy Alexis
+   Nom : Samaca Fandino
 
 ********************************)
 
