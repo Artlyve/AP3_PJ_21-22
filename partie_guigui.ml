@@ -79,7 +79,7 @@ image_vers_arbre 16 pic;;
 
 
 
-let remplir_img img k i j c =
+let remplir_carre img k i j c =
   forloop((k-1, img), i,
     (function(l, gmi) -> 
       forloop((j, gmi), k, 
@@ -99,7 +99,8 @@ let remplir_img img k i j c =
 
 
 
-let (a, p) = remplir_img pic 4 4 0 Blanc;;
+let (a, p) = remplir_carre pic 4 4 0 Blanc;;
 p.(1).(1);;
 
     type img_abr = (arbre * int);;
+
